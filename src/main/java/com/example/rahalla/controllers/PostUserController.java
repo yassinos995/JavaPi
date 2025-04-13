@@ -211,7 +211,7 @@ public class PostUserController implements Initializable {
 
                         commentBox.getChildren().addAll(commentLabel, dateLabel);
                         allCommentsBox.getChildren().add(commentBox);
-                    });
+                    }); 
 
                     Scene scene = new Scene(scrollPane);
                     scene.getStylesheets().add(getClass().getResource("/com/example/rahalla/styles.css").toExternalForm());
