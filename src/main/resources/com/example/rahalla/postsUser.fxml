@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="20" xmlns="http://javafx.com/javafx/17.0.2"
+      fx:controller="com.example.rahalla.controllers.PostUserController" stylesheets="@/com/example/rahalla/styles.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField"
+                   promptText="Search posts..."
+                   prefWidth="300"
+                   styleClass="search-field"/>
+        <HBox spacing="10" HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT">
+            <Button text="New Post"
+                    onAction="#navigateToAddPost"
+                    styleClass="button-raised"/>
+        </HBox>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox fx:id="postsContainer" spacing="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Export All"
+                onAction="#handleExportAll"
+                styleClass="button-raised"/>
+        <Button text="Generate Report"
+                onAction="#handleGenerateReport"
+                styleClass="button-raised"/>
+        <Button fx:id="returnToPostInterfaceBtn"
+                text="Return"
+                onAction="#returnToPostInterface"
+                styleClass="button-flat"/>
+    </HBox>
+</VBox>

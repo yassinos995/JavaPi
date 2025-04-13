@@ -1,0 +1,270 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 398458880 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3616), pid=28100, tid=30956
+#
+# JRE version:  (21.0.4+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.4+7-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dclassworlds.conf=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\bin\m2.conf -Dmaven.home=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9 -Dlibrary.jansi.path=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\aliammari\Downloads\wetransfer_rahalla_2025-04-12_0246\Rahalla org.codehaus.plexus.classworlds.launcher.Launcher clean javafx:run
+
+Host: 12th Gen Intel(R) Core(TM) i5-12500H, 16 cores, 23G,  Windows 11 , 64 bit Build 26100 (10.0.26100.5518)
+Time: Sat Apr 12 04:15:05 2025 W. Central Africa Standard Time elapsed time: 0.011320 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000022a5f4656f0):  JavaThread "Unknown thread" [_thread_in_vm, id=30956, stack(0x0000007b2b900000,0x0000007b2ba00000) (1024K)]
+
+Stack: [0x0000007b2b900000,0x0000007b2ba00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6cbcf9]
+V  [jvm.dll+0x8a5551]
+V  [jvm.dll+0x8a7a7e]
+V  [jvm.dll+0x8a8153]
+V  [jvm.dll+0x27eca6]
+V  [jvm.dll+0x6c8445]
+V  [jvm.dll+0x6bd13a]
+V  [jvm.dll+0x354a0a]
+V  [jvm.dll+0x35c5b6]
+V  [jvm.dll+0x3adf3e]
+V  [jvm.dll+0x3ae1e8]
+V  [jvm.dll+0x328bcc]
+V  [jvm.dll+0x32972b]
+V  [jvm.dll+0x86e7b9]
+V  [jvm.dll+0x3bac91]
+V  [jvm.dll+0x857973]
+V  [jvm.dll+0x44f32e]
+V  [jvm.dll+0x450f71]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x9c5dc]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffdd19a3088, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000022a5f4e2600 WorkerThread "GC Thread#0"                     [id=1928, stack(0x0000007b2ba00000,0x0000007b2bb00000) (1024K)]
+  0x0000022a5f50d2b0 ConcurrentGCThread "G1 Main Marker"            [id=25888, stack(0x0000007b2bb00000,0x0000007b2bc00000) (1024K)]
+  0x0000022a5f50ddb0 WorkerThread "G1 Conc#0"                       [id=28184, stack(0x0000007b2bc00000,0x0000007b2bd00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdd10ab4f7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffdd1a17408] Heap_lock - owner thread: 0x0000022a5f4656f0
+
+Heap address: 0x0000000684800000, size: 6072 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000684800000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdd1495669]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.006 Loaded shared library C:\Users\aliammari\.jdks\temurin-21.0.4\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff765180000 - 0x00007ff76518e000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\java.exe
+0x00007ffed60e0000 - 0x00007ffed6346000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffed5ac0000 - 0x00007ffed5b89000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffed3650000 - 0x00007ffed3a1b000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffed3b90000 - 0x00007ffed3cdb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffec0400000 - 0x00007ffec0418000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\jli.dll
+0x00007ffec03e0000 - 0x00007ffec03fb000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\VCRUNTIME140.dll
+0x00007ffed5270000 - 0x00007ffed543a000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffed3ad0000 - 0x00007ffed3af7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffeab6c0000 - 0x00007ffeab957000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5516_none_3e073f78e335730c\COMCTL32.dll
+0x00007ffed5990000 - 0x00007ffed59bb000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffed5b90000 - 0x00007ffed5c39000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffed3ce0000 - 0x00007ffed3e12000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffed3a20000 - 0x00007ffed3ac3000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffed5440000 - 0x00007ffed5470000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffec3970000 - 0x00007ffec397c000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\vcruntime140_1.dll
+0x00007ffe94200000 - 0x00007ffe9428e000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\msvcp140.dll
+0x00007ffdd0d70000 - 0x00007ffdd1af8000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\server\jvm.dll
+0x00007ffed5ec0000 - 0x00007ffed5f72000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffed4550000 - 0x00007ffed45f6000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffed5f80000 - 0x00007ffed6095000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffed5d90000 - 0x00007ffed5e04000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffed2af0000 - 0x00007ffed2b4e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffecf8a0000 - 0x00007ffecf8ab000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffebeb80000 - 0x00007ffebebb6000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffed2ad0000 - 0x00007ffed2ae4000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffed2080000 - 0x00007ffed209a000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe9e330000 - 0x00007ffe9e33a000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\jimage.dll
+0x00007ffed0a10000 - 0x00007ffed0c51000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffed4e50000 - 0x00007ffed51d4000 	C:\WINDOWS\System32\combase.dll
+0x00007ffed4090000 - 0x00007ffed4166000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffea3240000 - 0x00007ffea3279000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffed3e20000 - 0x00007ffed3eb9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe9c3f0000 - 0x00007ffe9c40f000 	C:\Users\aliammari\.jdks\temurin-21.0.4\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\aliammari\.jdks\temurin-21.0.4\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5516_none_3e073f78e335730c;C:\Users\aliammari\.jdks\temurin-21.0.4\bin\server
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\bin\m2.conf -Dmaven.home=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9 -Dlibrary.jansi.path=C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\aliammari\Downloads\wetransfer_rahalla_2025-04-12_0246\Rahalla 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher clean javafx:run
+java_class_path (initial): C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\boot\plexus-classworlds-2.8.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 398458880                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 6366953472                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 6366953472                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Users\aliammari\.jdks\temurin-21.0.4
+PATH=C:\Program Files\PowerShell\7;C:\app\aliammari\product\18.0.0\dbhomeXE\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\Users\aliammari\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aliammari\.jdks\temurin-21.0.4\bin;C:\Program Files\dotnet\;C:\Users\aliammari\flutter\bin;C:\Program Files (x86)\sox-14-4-2\sox.exe;C:\Users\aliammari\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI\;C:\Program Files\nodejs\;C:\Users\aliammari\AppData\Local\Android\Sdk\platform-tools;C:\Users\aliammari\AppData\Local\Android\Sdk\emulator;C:\Users\aliammari\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\aliammari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts;C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\bin;C:\Program Files\poppler-23.11.0\Library\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;C:\Program Files\PowerShell\7\;C:\Program Files\containerd;C:\Program Files\buildkit;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\aliammari\.cargo\bin;C:\Users\aliammari\AppData\Local\pnpm;C:\Users\aliammari\AppData\Local\Microsoft\WindowsApps;C:\Users\aliammari\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aliammari\AppData\Roaming\Code\User\globalStorage\ms-vscode-remote.remote-containers\cli-bin;C:\Users\aliammari\AppData\Local\Programs\Microsoft VS Code Insiders\bin;C:\Users\aliammari\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\JetBrains\WebStorm 2024.1.5\bin;;C:\Users\aliammari\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aliammari\.jdks\temurin-21.0.4\bin;C:\Users\aliammari\AppData\Local\Microsoft\WindowsApps;C:\Users\aliammari\flutter\bin;C:\Program Files (x86)\sox-14-4-2\sox.exe;C:\Users\aliammari\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0;C:\Users\aliammari\AppData\Roaming\npm;C:\Users\aliammari\AppData\Local\Android\Sdk\platform-tools;C:\Users\aliammari\AppData\Local\Android\Sdk\emulator;C:\Users\aliammari\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\aliammari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts;C:\Users\aliammari\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\bin;C:\Program Files\Tesseract-OCR;C:\Users\aliammari\AppData\Local\Programs\Ollama;C:\Users\aliammari\AppData\Local\Microsoft\WinGet\Links;
+USERNAME=aliammari
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+TMP=C:\Users\ALIAMM~1\AppData\Local\Temp
+TEMP=C:\Users\ALIAMM~1\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.5518)
+OS uptime: 0 days 12:43 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (8 cores per cpu, 2 threads per core) family 6 model 154 stepping 3 microcode 0x416, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for processor 0
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 1
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 2
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 3
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 4
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 5
+  Max Mhz: 3100, Current Mhz: 3100, Mhz Limit: 3100
+Processor Information for processor 6
+  Max Mhz: 3100, Current Mhz: 1500, Mhz Limit: 3100
+Processor Information for processor 7
+  Max Mhz: 3100, Current Mhz: 1500, Mhz Limit: 3100
+Processor Information for processor 8
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 9
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 10
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 11
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 12
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 13
+  Max Mhz: 3100, Current Mhz: 1488, Mhz Limit: 2232
+Processor Information for processor 14
+  Max Mhz: 3100, Current Mhz: 2232, Mhz Limit: 2232
+Processor Information for processor 15
+  Max Mhz: 3100, Current Mhz: 1488, Mhz Limit: 2232
+
+Memory: 4k page, system-wide physical 24276M (3972M free)
+TotalPageFile size 44109M (AvailPageFile size 61M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 71M, peak: 451M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.4+7-LTS) for windows-amd64 JRE (21.0.4+7-LTS), built on 2024-07-16T00:00:00Z by "admin" with MS VC++ 17.7 (VS2022)
+
+END.

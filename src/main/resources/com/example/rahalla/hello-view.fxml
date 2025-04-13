@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+    <top>
+        <HBox style="-fx-background-color: #707070; -fx-padding: 15px;" spacing="20" alignment="CENTER_LEFT">
+            <!-- Change the ImageView in hello-view.fxml to this: -->
+            <Label text="Camping Blog" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Home" style="-fx-text-fill: white; -fx-background-color: transparent;"/>
+                <Button text="Services" style="-fx-text-fill: white; -fx-background-color: transparent;"/>
+                <Button text="Blog" style="-fx-text-fill: white; -fx-background-color: transparent;"/>
+                <Button text="Team" style="-fx-text-fill: white; -fx-background-color: transparent;"/>
+                <Button text="Contact" style="-fx-text-fill: white; -fx-background-color: transparent;"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20px;">
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Ajouter un Post" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                <TextField promptText="Rechercher des articles..."/>
+            </HBox>
+
+            <!-- Blog Post Example -->
+            <VBox style="-fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-padding: 15px;" spacing="10">
+                <Label text="camp now bro" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <Label text="camp now bro"/>
+                <Label text="you should camp with us..."/>
+
+                <HBox spacing="10">
+                    <Label text="Posted on 2025-03-02 01:06" style="-fx-font-size: 11px; -fx-text-fill: gray;"/>
+                    <Label text="(2025-03-02 01:08) : Bonjour!" style="-fx-font-size: 11px; -fx-text-fill: gray;"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Button text="Modifier" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+                    <Button text="Supprimer" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="15" xmlns="http://javafx.com/javafx/17.0.2"
+      fx:controller="com.example.rahalla.controllers.AddPostController"
+      styleClass="form-container">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Create New Post" styleClass="form-title"/>
+
+    <VBox spacing="5">
+        <TextField fx:id="titleField"
+                   promptText="Title"
+                   styleClass="form-field"/>
+        <Label fx:id="titleError"
+               styleClass="helper-text,error"
+               visible="false"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <TextArea fx:id="contentArea"
+                  promptText="Write your post content here..."
+                  prefRowCount="5"
+                  styleClass="form-textarea"
+                  wrapText="true"/>
+        <Label fx:id="contentError"
+               styleClass="helper-text,error"
+                visible="false"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <TextField fx:id="locationField"
+                   promptText="Location"
+                   styleClass="form-field"/>
+        <Label fx:id="locationError"
+               styleClass="helper-text,error"
+                visible="false"/>
+    </VBox>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button fx:id="loadImageBtn"
+                text="Load Image"
+                onAction="#handleLoadImage"
+                styleClass="button-raised"/>
+        <ImageView fx:id="imageView"
+                   fitWidth="300"
+                   preserveRatio="true"
+                   managed="false" visible="false"/>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="submitBtn"
+                text="Create Post"
+                onAction="#handleSubmit"
+                styleClass="button-raised"/>
+    </HBox>
+</VBox>
