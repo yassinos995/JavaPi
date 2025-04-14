@@ -204,15 +204,15 @@ public class PostUserController implements Initializable {
                         Button editCommentBtn = new Button("✏️");
                         editCommentBtn.getStyleClass().add("comment-action-button");
                         editCommentBtn.setOnAction(e1 -> handleEditComment(comment));
-
+//new
                         Button deleteCommentBtn = new Button("🗑️");
                         deleteCommentBtn.getStyleClass().add("comment-action-button");
                         deleteCommentBtn.setOnAction(e1 -> handleDeleteComment(comment, post));
 
                         commentBox.getChildren().addAll(commentLabel, dateLabel);
                         allCommentsBox.getChildren().add(commentBox);
-                    }); 
-
+                    });
+//new
                     Scene scene = new Scene(scrollPane);
                     scene.getStylesheets().add(getClass().getResource("/com/example/rahalla/styles.css").toExternalForm());
                     commentStage.setScene(scene);
